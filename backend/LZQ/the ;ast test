@@ -1,0 +1,10 @@
+/**
+ * Created by Fantasy on 2018/1/20.
+ */
+var http = require('http');//加载一个http模块
+var server = http.createServer(function (req,res) {//创建服务器，req获取请求相关信息；res给请求响应内容
+    res.writeHead(200,{'Content-Type':'text/plain'});//200 为成功，再每次修改后服务器要重启才会更新
+    res.end('hello world\n');//响应时在界面上显示hello world
+})//服务器声明
+server.listen(1337,'127.0.0.1');//监听1337端口上的127.0.0.1
+console.log('Server running at http://127.0.0.1:1337/');//服务器运行成功就显示
