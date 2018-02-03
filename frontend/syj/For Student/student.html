@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+<head>
+	<title>For Student</title>
+	<link rel="stylesheet" type="text/css" href="../css/header-style.css">
+</head>
+<body>
+	<div id="wrapper">
+		<header class="header">
+			<div class="header-img">
+				<img src="../images/student.png">
+			</div>
+			<div class="header-nav">
+				<div class="inform"><marquee class='info' onmouseover=this.stop() onmouseout=this.start() loop='true'>滚动通知</marquee>
+				</div>
+				<div class="logout-container">
+					<div class="logout">
+						<p>注销</p>
+						<img src="../images/logout.png">
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div id="hint-back"></div>
+		<div id="hint">
+			<div class="hint-text">
+				<h style="font-size: 17px;">系统消息</h>
+				<hr>
+				<p style="text-align: center;line-height: 100px">确认注销？</p>
+			</div>
+			<div class="hint-confirm">
+				<button class="ok">OK</button>
+				<button class="cancle">Cancle</button>
+			</div>
+		</div>
+
+	</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../js/header.js"></script>
+</html>
