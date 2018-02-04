@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8">
+<head>
+	<title>For Teacher</title>
+	<link rel="stylesheet" type="text/css" href="../css/header-style.css">
+	<link rel="stylesheet" type="text/css" href="css/forteacher-style.css">
+</head>
+<body>
+	<div id="wrapper">
+		<header class="header">
+			<div class="header-img">
+				<img src="../images/teacher.png">
+			</div>
+			<div class="header-nav">
+				<div class="inform"><marquee class='info' onmouseover=this.stop() onmouseout=this.start() loop='true'>滚动通知</marquee>
+				</div>
+				<div class="logout-container">
+					<div class="logout">
+						<p>注销</p>
+						<img src="../images/logout.png">
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<div class="menu">
+				<div class="menu-head">
+					<span class="menu-toleft" style="float:left">
+						<img src="../images/left.png">
+					</span>
+					<span class="menu-toright" style="float:right">
+						<img src="../images/right.png">
+					</span>
+				</div>
+				<div class="menu-list">
+					<ul class="info">个人信息</ul>
+					<ul class="lesson">课程
+						<li class="lesson-publish">发布课程</li>
+						<li class="lesson-view">查看课程</li>
+					</ul>
+					<ul class="work">作业
+						<li class="work-publish">发布作业</li>
+						<li class="work-view">查看作业</li>
+					</ul>
+					<ul class="score">成绩
+						<li class="score-publish">上传成绩</li>
+						<li class="score-view">查看成绩</li>
+						<li class="score-change">修改成绩</li>
+					</ul>
+					<ul class="exam-arrange">监考安排</ul>
+					<ul class="teach-assess">评教结果</ul>
+					<ul class="password-change">修改密码</ul>
+				</div>
+			</div>
+			<div class="content"></div>
+		</div>
+
+		<div id="hint-back"></div>
+		<div id="hint">
+			<div class="hint-text">
+				<h style="font-size: 17px;">系统消息</h>
+				<hr>
+				<p style="text-align: center;line-height: 100px">确认注销？</p>
+			</div>
+			<div class="hint-confirm">
+				<button class="ok">OK</button>
+				<button class="cancle">Cancle</button>
+			</div>
+		</div>
+
+	</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="js/forteacher-js.js"></script>
+</html>
