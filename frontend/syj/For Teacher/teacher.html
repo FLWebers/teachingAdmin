@@ -91,13 +91,70 @@
 							</tr>
 						</table>
 					</ul>
-					<ul class="c-lesson-publish">发布课程<hr></ul>
+					<ul class="c-lesson-publish">发布课程<hr>
+						<table>
+							<tr><td>课程名：</td><td><input type="text" name="lesson-name"></td></tr>
+							<tr>
+								<td>学时：</td>
+								<td><input type="text" name="lesson-longth"></td>
+								<td>学期：<select class="lesson-term"></select></td>
+							</tr>
+							<tr>
+								<td>学分：</td>
+								<td><input type="text" name="lesson-score"></td>
+								<td>类别：<select class="lesson-kind">
+									<option>专业类</option>
+									<option>鉴赏类</option>
+									<option>文化类</option>
+									<option>理科类</option>
+								</select></td>
+							</tr>
+							<tr><td>上课地点：</td><td><input type="text" name="lesson-position"></td></tr>
+							<tr><td>限选人数：</td><td><input type="text" name="lesson-number"></td></tr>
+							<tr>
+								<td>上课时间：</td>
+								<td><input type="text" name="date-start">周-<input type="text" name="date-end">周</td>
+								<td><input type="radio" name="radio">全<input type="radio" name="radio">单周<input type="radio" name="radio">双周</td>
+							</tr>
+						</table>
+						<button>发布</button>
+					</ul>
 					<ul class="c-lesson-view">查看课程<hr></ul>
-					<ul class="c-work-publish">发布作业<hr></ul>
+					<ul class="c-work-publish">发布作业<hr>
+						<table>
+							<tr>
+								<td>作业名称：</td>
+								<td><input type="text" name="work-name"></td>
+								<td>作业总分：</td>
+								<td><input type="text" name="work-score"></td>
+								<td>截止日期：</td>
+								<td><input type="date" name="work-date"></td>
+								<td><img src="images/add.jpg" style="width: 25px;vertical-align: middle;cursor: pointer;" class="work-add"></td>
+							</tr>
+							<table>
+								<tr>
+									<td>作业要求：</td>
+									<td><textarea name="work-request" style="width: 790px;max-width:790px;height: 80px;padding: 5px;"></textarea></td>
+								</tr>
+							</table>
+						</table>
+						<button>发布</button>
+					</ul>
 					<ul class="c-work-view">查看作业<hr></ul>
 					<ul class="c-score-publish">上传成绩<hr></ul>
 					<ul class="c-score-view">查看成绩<hr></ul>
-					<ul class="c-score-change">修改成绩<hr></ul>
+					<ul class="c-score-change">修改成绩<hr>
+						<div>输入学号：<input type="number" name="score-number"></div>
+						<table>
+							<tr>
+								<td>姓名：</td>
+								<td>成绩：</td>
+								<td>新成绩：</td>
+								<td><input type="number" name="score-newscore"></td>
+								<td><button>修改</button></td>
+							</tr>
+						</table>
+					</ul>
 					<ul class="c-exam-arrange">监考安排<hr></ul>
 					<ul class="c-teach-assess">评教结果<hr></ul>
 					<ul class="c-password-change">修改密码<hr>

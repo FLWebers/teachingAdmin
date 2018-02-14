@@ -71,5 +71,38 @@ $(function(){
 			})
 		}
 	})
-	
+	//
+	var time = new Date().getFullYear();
+	$('.lesson-term').append('<option>'+time+'-'+(time+1)+'第二学期</option>'
+							+'<option>'+time+'-'+(time+1)+'第一学期</option>'
+							+'<option>'+(time+1)+'-'+(time+2)+'第二学期</option>'
+		)
+	$('.work-add').click(function(){
+		var mark = new Date().getTime();
+		$('.c-work-publish button').hide();
+		$('.c-work-publish').append('<table class="'+mark+'">'+
+							'<tr>'+
+								'<td>作业名称：</td>'+
+								'<td><input type="text" name="work-name"></td>'+
+								'<td>作业总分：</td>'+
+								'<td><input type="text" name="work-score"></td>'+
+								'<td>截止日期：</td>'+
+								'<td><input type="date" name="work-date"></td>'+
+								'<td><img src="images/sub.jpg" style="width: 25px;vertical-align: middle;cursor: pointer;" class="work-sub" name="'+mark+'"></td>'+
+							'</tr>'+
+							'<table class="'+mark+'">'+
+								'<tr>'+
+								'<td>作业要求：</td>'+
+								'<td><input type="text" name="work-request" style="width: 790px;height: 80px;"></td>'+
+							'</tr>'+
+							'</table>'+
+						'</table>'+
+						'<button>发布</button>'
+		)
+	})
+	$('body').on('click','.work-sub',function(){
+		var del = $(this).attr("name");
+		$('.'+del).remove();
+		console.log($(this).attr("name"));
+	})
 });
