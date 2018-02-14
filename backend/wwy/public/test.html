@@ -8,22 +8,31 @@
     <button id="x" onclick="a()"></button>
     <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
+        // function a() {
+        //     $.ajax({
+        //         type : 'post',
+        //         url :'http://127.0.0.1:3000/test',
+        //         data : {name : 'xiaoming',age : '19' },
+        //         success : function (result) {
+        //             console.log(result);
+        //         },
+        //         error : function () {
+        //             alert('errors');
+        //         }
+        //     })
+        // }
         function a() {
-//            $.ajax({
-//                typr : 'post',
-//                url :'http://localhost:8888/test',
-//                success : function (result) {
-//                    alert(result);
-//                },
-//                error : function () {
-//                    alert('errors');
-//                }
-//            })
-            $.post('http://127.0.0.1:8888/test',//把账号和密码传给后台
-                function (data) {
-                    alert(data+'++++++');
+            $.ajax({
+                type : 'post',
+                url : 'http://127.0.0.1:3000/change_password',
+                data : {username : '888989',password : '15454654566511',newPassword : '11dddddddd'},
+                success : function (result) {
+                    console.log(result);
+                },
+                error : function () {
+                    alert('errors');
                 }
-            );
+            })
         }
     </script>
 </body>
