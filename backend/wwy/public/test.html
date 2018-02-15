@@ -8,24 +8,13 @@
     <button id="x" onclick="a()"></button>
     <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
     <script type="text/javascript">
-        // function a() {
-        //     $.ajax({
-        //         type : 'post',
-        //         url :'http://127.0.0.1:3000/test',
-        //         data : {name : 'xiaoming',age : '19' },
-        //         success : function (result) {
-        //             console.log(result);
-        //         },
-        //         error : function () {
-        //             alert('errors');
-        //         }
-        //     })
-        // }
         function a() {
             $.ajax({
                 type : 'post',
-                url : 'http://127.0.0.1:3000/change_password',
-                data : {username : '888989',password : '15454654566511',newPassword : '11dddddddd'},
+                url : 'http://127.0.0.1:3000/student/chooseCourses1',
+                // data : {username : '888989',password : '15454654566511',newPassword : '11dddddddd'},
+                data : {username : '201650080101',type : '必修',semester: '大一（上）'},
+                // data : {username : '888989',password : '11dddddddd'},
                 success : function (result) {
                     console.log(result);
                 },

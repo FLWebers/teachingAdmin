@@ -5,22 +5,13 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.urlencoded({extended : false}));
 
-var connection = mysql.createConnection({
-    host : 'localhost',
-    port : '3306',
-    user : 'root',
-    password : '981019',
-    database : 'teaching_admin'
-});
+var dbConnection = require('./db_connection');
+var connection = dbConnection.connectMysql(mysql);
 connection.connect();
-app.all('*', function(req, res, next) {//执行完整匹配,use只匹配前缀
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
-    res.header("X-Powered-By",' 3.2.1');
-    res.header("Content-Type", "application/json;charset=utf-8");
-    next();
-});
+
+var appHeader = require('./set_header');
+appHeader.setHeader(app);
+
 app.post('/change_password',function (req,res,next) {
     var username = "'" + req.body.username + "'";
     var password = "'" + req.body.password + "'";

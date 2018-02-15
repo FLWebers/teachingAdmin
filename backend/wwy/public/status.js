@@ -4,13 +4,15 @@ var express = require('express');
 var app = express();
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-    host : 'localhost',
-    port : '3306',
-    user : 'root',
-    password : '981019',
-    database : 'teaching_admin'
-});
+// var connection = mysql.createConnection({
+//     host : 'localhost',
+//     port : '3306',
+//     user : 'root',
+//     password : '981019',
+//     database : 'teaching_admin'
+// });
+var dbConnection = require('./db_connection');
+var connection = dbConnection.connectMysql(mysql);
 connection.connect();
 var sql = 'SELECT * FROM students';
 connection.query(sql,function (error,results) {
