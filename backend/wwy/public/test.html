@@ -11,10 +11,11 @@
         function a() {
             $.ajax({
                 type : 'post',
-                url : 'http://127.0.0.1:3000/student/chooseCourses1',
+                url : 'http://127.0.0.1:3000/student/chooseCourses2',
                 // data : {username : '888989',password : '15454654566511',newPassword : '11dddddddd'},
-                data : {username : '201650080101',type : '必修',semester: '大一（上）'},
+                // data : {username : '201650080101',category : '必修',semester: '大一（上）'},
                 // data : {username : '888989',password : '11dddddddd'},
+                data : {s_username : '201650080101',t_username : '1549465821',course_name : '数据结构',course_time : '周二 8:00-9:40 周四 14:00-15:40 周五 8:00-9:40'},
                 success : function (result) {
                     console.log(result);
                 },

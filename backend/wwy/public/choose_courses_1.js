@@ -16,47 +16,41 @@ var appHeader = require('./set_header');
 appHeader.setHeader(app);
 app.post('/student/chooseCourses1',function (req,res,next) {
     var username = "'" + req.body.username + "'";
-    var type = "'" + req.body.type + "'";
+    var category = "'" + req.body.category + "'";
     var semester = "'" + req.body.semester + "'";
     var jsonResult;
-    var sql = 'SELECT course_name FROM evaluate_grades WHERE s_username = ' + username;
-    connection.query(sql,function (error,result) {
+    /*第一步：根据课程类型和学期在后台筛选所有符合条件的数据*/
+    var sql = 'SELECT * FROM courses WHERE category = ' + category + 'AND semester  = ' + semester;
+    connection.query(sql,function (error,result) {//error只是表示语法结构错误而已
         if(error){
             jsonResult = {
                 "status" : "200",
                 "message" : "success",
-                data : null
-            }
-        } else {
-            jsonResult = {
-                "status" : "200",
-                "message" : "success",
-                data : result
+                "data" : null
             };
-            console.log('course_name : ',result);
+            res.status(200).send(JSON.stringify(jsonResult));
+            next();
+        } else {
+            sql = 'SELECT course_name FROM evaluate_grades WHERE s_username = ' + username;
+            connection.query(sql,function (error,result2) {
+                if(error){
+                    jsonResult = {
+                        "status" : "200",
+                        "message" : "success",
+                        "data" : null
+                    }
+                } else {
+                    jsonResult = {
+                        "status" : "200",
+                        "message" : "success",
+                        "choosed" : result2,
+                        "data" : result
+                    };
+                }
+                res.status(200).send(JSON.stringify(jsonResult));
+                next();//不能放在connection.query的外面
+            });
         }
-        res.status(200).send(jsonResult);
-            next();//不能放在connection.query的外面
     });
-    // sql = 'SELECT * FROM courses WHERE category = ' + type + 'AND semester = ' + semester;
-    // connection.query(sql,function (error,result) {
-    //     if (error){
-    //         console.log('error : ' + error.message);
-    //         jsonResult = {//返回json形式的数据
-    //             "status" : "200",
-    //             "message" : "success",
-    //             data : null
-    //         }
-    //     }
-    //     else {
-    //         jsonResult = {
-    //             "status" : "200",
-    //             "message" : "success",
-    //             data : result
-    //         }
-    //     }
-    //     res.status(200).send(jsonResult);
-    //     next();//不能放在connection.query的外面
-    // });
 });//获取前端传送的课程类型，并将所有结果返回给前端
 app.listen(3000);
