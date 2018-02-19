@@ -1,30 +1,27 @@
-/*作业模块1:用于展示该生所有作业的概况*/
+/*学生评教模块1,向前端发送该生所有评教信息*/
 
 var express = require('express');
 var mysql = require('mysql');
-var bodyPaser = require('body-parser');
+var bodyParser = require('body-parser');
 var app = express();
 
-app.use(bodyPaser.urlencoded({extended : false}));
+app.use(bodyParser.urlencoded({extended:false}));
 
 var dbConnection = require('./db_connection');
 var connection = dbConnection.connectMysql(mysql);
-
 connection.connect();
-
 var appHeader = require('./set_header');
-appHeader.setHeader(app);
 
-app.post('/student/homework',function (req,res,next) {
-    var s_username = "'" + req.body.s_username + "'";
-    var homework_title = "'" + req.body.homework_title + "'";
-    var sql = 'SELECT * FROM homework WHERE s_username = ' + s_username + ' AND homework_title = ' + homework_title;
+appHeader.setHeader(app);
+app.post('/student/evaluate1',function (req,res,next) {
+    var s_username = req.body.s_username;
     var jsonResult;
+    var sql = 'SELECT * FROM evaluate_grades WHERE s_username = ' + s_username;
     connection.query(sql,function (error,result) {
         if(error){
             jsonResult = {
                 "status" : "200",
-                "message" : "error",
+                "message" : "can't connect to db",
                 "data" : null
             }
         } else {
