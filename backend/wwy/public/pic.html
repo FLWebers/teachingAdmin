@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form enctype="multipart/form-data">
+        <input id="file" name="file" type="file" />
+    </form>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        $("#file").on("change", function(){
+            var formData = new FormData();
+            formData.append("file", $("#file")[0].files[0]);
+            console.log($('#file').val());
+            console.log('formData',formData);
+            var s_username = '201650080101';
+            var homework_title = '数据结构第一次实验';
+            formData.append('s_username',s_username);
+            formData.append('homework_title',homework_title);//传递除文件以为的参数
+            $.ajax({
+                url: "http://127.0.0.1:3000/student/homeworks2",
+                type: "POST",
+                data: formData,
+                processData: false,//不要对data参数进行序列化处理，默认为true
+                contentType: false,// 不要设置Content-Type请求头，因为文件数据是以 multipart/form-data 来编码
+                success: function(result){
+                    // 根据返回结果指定界面操作
+                    alert("success");
+                    console.log('result',result);
+                },
+                error : function () {
+                    alert("error");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
