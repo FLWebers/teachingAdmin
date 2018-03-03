@@ -1,0 +1,144 @@
+.container{
+	width: 100%;
+	min-width: 1260px;
+
+}
+.menu{
+	width: 15%;
+	min-width: 189px;
+	float: left;
+}
+.content{
+	float: left;
+	width: 85%;
+	margin: 0 auto;
+	min-width: 1071px;
+}
+.menu-head{
+	margin: 0 auto;
+	width: 160px;
+	height: 30px;
+}
+.menu-head img{
+	height: 30px;
+}
+.menu-toleft,.menu-toright{
+	display: block;
+	cursor: pointer;
+}
+.menu-toleft:active,.menu-toright:active{
+	opacity: .5;
+}
+.btn{
+	display: none;
+	position: absolute;
+	text-align: center;
+	width: 15px;
+	line-height: 500px;
+}
+.btn:hover{
+	background: linear-gradient(to right,rgb(203,203,203),#fff,rgb(203,203,203));
+}
+.btn:active{
+	opacity: .6;
+}
+.menu-list{
+	width: 160px;
+	margin: 0 auto;
+}
+.menu-list ul{
+	border-radius: 20px;
+	border:4px solid rgb(153,217,234);
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 2px;
+	margin-top: 2px;
+}
+.menu-list ul:hover{
+	background-color: rgb(153,217,234);
+	color: #fff;
+	transition: color .5s,background-color .5s;
+}
+.backcolor-before{
+	background-color: #fff;
+	color: rgb(153,217,234);
+}
+.backcolor-after{
+	background-color: rgb(153,217,234);
+	color: #fff;
+}
+.menu-list ul li{
+	color: #000;
+	background-color: #fff;
+	font-weight: normal;
+	font-size: 13px;
+	letter-spacing: 0;
+	margin:2px 0;
+	cursor: pointer;
+	line-height: 20px;
+}
+.content-list{
+	width: 85%;
+	margin:0 auto;
+}
+.content-list ul{
+	position: absolute;
+	padding: 10px;
+	border-radius: 3px;
+	text-align: center;
+	width: 70%;
+	min-width: 1000px;
+}
+.c-wrapper{
+	width: 900px;
+	top: 300px;
+	/*left: 50%;
+	top: 50%;
+	transform: translate(-35%,-50%);*/
+	color: rgb(31,130,237);
+	font-size: 172px;
+	font-weight: bold;
+}
+.c-wrapper img{
+	width: 80px;
+}
+
+.content-list ul:not(:first-child){
+	background-color: rgb(207,238,245);
+}
+.content-list ul table{
+	margin: 20px auto;
+	border-collapse: collapse;
+}
+.content-list ul table td{
+	padding: 10px;
+	word-wrap:break-word;
+	word-break:break-all;
+}
+.c-info table td{
+	width: 700px;
+}
+.info-text table{
+	text-align: left;
+	line-height: 30px;
+}
+.c-password-change table td{
+	width: 100px;
+	padding: 10px;
+}
+input{
+	padding: 5px;
+}
+button{
+	
+	width: 100px;
+	height: 30px;
+	border: 0;
+	border-radius: 3px;
+	cursor: pointer;
+	outline: 0;
+	background: rgba(31,130,237,.6);/*linear-gradient(rgb(31,130,237),#fff,rgb(31,130,237));*/
+}
+button:active{
+	opacity: .8;
+}

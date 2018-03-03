@@ -4,6 +4,7 @@
 <head>
 	<title>For Student</title>
 	<link rel="stylesheet" type="text/css" href="../css/header-style.css">
+	<link rel="stylesheet" type="text/css" href="css/forstudent-style.css">
 </head>
 <body>
 	<div id="wrapper">
@@ -23,6 +24,100 @@
 			</div>
 		</header>
 
+		<div class="container">
+			<div class="menu">
+				<div class="menu-head">
+					<span class="menu-toleft" style="float:left">
+						<img src="../images/left.png">
+					</span>
+					<span class="menu-toright" style="float: right">
+						<img src="../images/right.png">
+					</span>
+				</div>
+				<div class="menu-list">
+					<ul class="info">个人信息</ul>
+					<ul class="lesson">课程
+						<li class="lesson-select">选择课程</li>
+						<li class="lesson-view">查看已选课程</li>
+					</ul>
+					<ul class="book">教材
+						<li class="book-select">选择教材</li>
+						<li class="book-view">查看已选教材</li>
+					</ul>
+					<ul class="score-view">成绩查看</ul>
+					<ul class="schedule-view">课表查看</ul>
+					<ul class="exam-arrange">考试安排</ul>
+					<ul class="teach-assess">评教</ul>
+					<ul class="password-change">修改密码</ul>
+				</div>
+			</div>
+			<div class="btn" style="left: 0;">&gt</div>
+			<div class="btn" style="right: 0;">&lt</div>
+			<div class="content">
+				<div class="content-list">
+					<ul class="c-wrapper">Welcome<img src="../images/mark.png"></ul>
+					<ul class="c-info">个人信息<hr>
+						<table style="border: 1px solid #000;">
+							<tr>
+								<td class="info-picture" style="width: 300px;">
+									<img src="" style="width: 100px;" alt="照片">
+								</td>
+								<td class="info-text" style="border: 1px solid #000;">
+									<table>
+										<tr><td class="number">教工号：</td></tr>
+										<tr>
+											<td class="name">姓名：</td>
+											<td class="sex">性别：</td>
+										</tr>
+										<tr><td class="idcard">身份证：</td></tr>
+										<tr>
+											<td class="nation">民族：</td>
+											<td class="college">所属院系：</td>
+										</tr>
+										<tr>
+											<td class="indentify">政治身份：</td>
+											<td class="phone">联系电话：</td>
+										</tr>
+										<table>
+											<tr>
+												<td class="reputation" style="width: 100px;">荣誉称号：</td>
+												<td class="reputation-text"></td>
+											</tr>
+										</table>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</ul>
+					<ul class="c-lesson-select">选择课程<hr></ul>
+					<ul class="c-lesson-view">查看已选课程<hr></ul>
+					<ul class="c-book-select">选择教材<hr></ul>
+					<ul class="c-book-view">查看教材<hr></ul>
+					<ul class="c-score-view">成绩查看<hr></ul>
+					<ul class="c-schedule-view">课表查看<hr></ul>
+					<ul class="c-exam-arrange">考试安排<hr></ul>
+					<ul class="c-teach-assess">评教<hr></ul>
+					<ul class="c-password-change">修改密码<hr>
+						<table>
+							<tr>
+								<td>原密码：</td>
+								<td><input type="password" name="password"></td>
+							</tr>
+							<tr>
+								<td>新密码：</td>
+								<td><input type="password" name="new-password"></td>
+							</tr>
+							<tr>
+								<td>确认密码：</td>
+								<td><input type="password" name="new-passwords"></td>
+							</tr>
+						</table>
+						<button>修改</button>
+					</ul>
+				</div>
+			</div>
+		</div>
+
 		<div id="hint-back"></div>
 		<div id="hint">
 			<div class="hint-text">
@@ -40,4 +135,6 @@
 </body>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script type="text/javascript" src="../js/header.js"></script>
+<script type="text/javascript" src="js/forstudent-js.js"></script>
+<script type="text/javascript" src="js/s-request.js"></script>
 </html>
